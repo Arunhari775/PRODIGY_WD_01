@@ -7,14 +7,52 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
+    <!-- Navigation Bar -->
     <nav>
         <ul id="nav-menu">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="#home" onclick="showSection('home')">Home</a></li>
+            <li><a href="#about" onclick="showSection('about')">About</a></li>
+            <li><a href="#services" onclick="showSection('services')">Services</a></li>
+            <li><a href="#contact" onclick="showSection('contact')">Contact</a></li>
         </ul>
     </nav>
+
+    <!-- Sections -->
+    <section id="home" class="content-section">
+        <h1>Welcome to Our Site</h1>
+        <p>Explore our range of services and learn how we can help you achieve your business goals.</p>
+    </section>
+
+    <section id="about" class="content-section" style="display:none;">
+        <h1>About Prodigy Infotech</h1>
+        <p>Prodigy Infotech is a leading technology solutions provider, specializing in delivering high-quality IT services 
+           that empower businesses to innovate and grow. Our team of experts brings years of experience to offer customized 
+           solutions tailored to each client’s unique needs. We prioritize integrity, excellence, and customer satisfaction 
+           in all our projects.</p>
+    </section>
+
+    <section id="services" class="content-section" style="display:none;">
+        <h1>Our Services</h1>
+        <ul>
+            <li>Web Development</li>
+            <li>Mobile Application Development</li>
+            <li>Cloud Solutions</li>
+            <li>Data Analytics</li>
+        </ul>
+        <p>We offer a comprehensive range of services designed to drive your digital transformation journey.</p>
+    </section>
+
+    <section id="contact" class="content-section" style="display:none;">
+        <h1>Contact Us</h1>
+        <p>Feel free to reach out to us for more information or to discuss your project needs.</p>
+        <ul>
+            <li>Email: contact@prodigyinfotech.com</li>
+            <li>Phone: +1 (234) 567-890</li>
+            <li>Address: 123 Innovation Drive, Tech City</li>
+        </ul>
+    </section>
+
     <script src="script.js"></script>
 </body>
 </html>
