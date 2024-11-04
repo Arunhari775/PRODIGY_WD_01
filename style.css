@@ -1,34 +1,112 @@
-body {
-    font-family: Arial, sans-serif;
+* {
     margin: 0;
     padding: 0;
-    background-color: #f0f0f0;
+    box-sizing: border-box;
 }
 
-nav {
-    background-color: #333;
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fad0c4, #fbc2eb, #a18cd1);
+    background-size: 400% 400%;
+    animation: gradientBackground 15s ease infinite;
 }
 
-#nav-menu {
-    list-style-type: none;
+/* Animate the background gradient */
+@keyframes gradientBackground {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.navbar {
+    background: rgba(44, 62, 80, 0.8); /* Semi-transparent navbar */
+    border-radius: 12px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    padding: 10px;
+    transition: transform 0.3s ease;
+}
+
+.navbar:hover {
+    transform: scale(1.02);
+}
+
+.navbar ul {
+    list-style: none;
     padding: 0;
     margin: 0;
     display: flex;
-    justify-content: space-around;
 }
 
-#nav-menu li {
+.nav-item {
+    padding: 15px 25px;
+    color: #fff;
+    font-size: 18px;
     position: relative;
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.3s ease, background 0.4s;
 }
 
-#nav-menu a {
-    display: block;
-    padding: 15px 20px;
-    color: white;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
+.nav-item:hover {
+    color: #ffdd57;
+    background: rgba(255, 255, 255, 0.1);
+    transform: scale(1.1);
+    box-shadow: 0 4px 15px rgba(255, 221, 87, 0.5);
 }
 
-#nav-menu a:hover {
-    background-color: #555;
+.nav-item:active {
+    /* Ripple effect on click */
+    animation: ripple 0.4s ease;
+}
+
+/* Ripple effect animation */
+@keyframes ripple {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Gradient underline effect on hover */
+.nav-item::before {
+    content: "";
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    width: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #ffdd57, #4caf50);
+    transition: width 0.3s ease;
+    transform: translateX(-50%);
+    border-radius: 4px;
+}
+
+.nav-item:hover::before {
+    width: 60%;
+}
+
+/* Active (clicked) state styles */
+.active {
+    color: #4caf50;
+    font-weight: bold;
+    transform: scale(1.1);
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 4px 15px rgba(76, 175, 80, 0.5);
+}
+
+.active::before {
+    width: 60%;
+    background: linear-gradient(90deg, #4caf50, #ffdd57);
 }
